@@ -34,3 +34,29 @@ UCI Student Performance dataset:
 * **health** - current health status (numeric: from 1 - very bad to 5 - very good)
 * **traveltime** - home to school travel time (numeric: 1 - <15 min., 2 - 15 to 30 min., 3 - 30 min. to 1 hour, or 4 - >1 hour)
 * **Pstatus** - parent's cohabitation status (binary: "T" - living together or "A" - apart)
+
+
+## How to run
+
+Two ways to run the Streamlit app.
+
+### Option 1 \- Local (pip + Streamlit)
+1. Create and activate a virtual environment:
+   - `python3 -m venv .venv`
+   - `source .venv/bin/activate`
+2. Install dependencies:
+   - `pip install -r requirements.txt`
+   - If `streamlit` is not in `requirements.txt` run `pip install streamlit`
+3. Run the app (replace `app.py` with your script path if different, e.g. `src/app.py`):
+   - `streamlit run app.py --server.port 8501 --server.address 0.0.0.0`
+
+### Option 2 \- Docker
+1. Build the image from the repository root:
+   - `docker build -t student-performance .`
+2. Run the container:
+   - `docker run --rm -p 8501:8501 student-performance`
+3. If your Streamlit script is not `app.py`, override the script path:
+   - `docker run --rm -p 8501:8501 -e STREAMLIT_APP=src/app.py student-performance`
+
+Troubleshooting:
+- If Streamlit reports "File does not exist", inspect the repo files inside the project to find the correct entrypoint, e.g. `ls` or `git ls-files | grep -E 'app|streamlit|main'` and update the command or `STREAMLIT_APP` accordingly.
