@@ -17,6 +17,30 @@ except Exception as e:
 
 st.title("Student Performance Prediction")
 st.write("Predict whether a student will pass or fail based on 15 key attributes.")
+st.set_page_config(page_title="Student Performance Prediction", layout="wide")
+
+
+# remove the 3 dots
+st.markdown("""
+    <style>
+        .reportview-container {
+            margin-top: -2em;
+        }
+        #MainMenu {visibility: hidden;}
+        .stDeployButton {display:none;}
+        footer {visibility: hidden;}
+        #stDecoration {display:none;}
+    </style>
+""", unsafe_allow_html=True)
+st.markdown(
+    r"""
+    <style>
+    .stDeployButton {
+            visibility: hidden;
+        }
+    </style>
+    """, unsafe_allow_html=True
+)
 
 # Input fields for features
 st.sidebar.header("Student Information")
