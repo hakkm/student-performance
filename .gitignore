@@ -21,3 +21,4 @@ models/*.joblib
 .vscode/
 .DS_Store
 .idea
+models/student_tree

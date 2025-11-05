@@ -21,7 +21,26 @@ def preprocess(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, pd.Series,
     df['pass'] = (df['G3'] >= 10).astype(int)
 
     # drop original target columns
-    X = df.drop(columns=['G1', 'G2', 'G3', 'pass'])
+# This is the list of 15 features from your image
+    features_selected = [
+        'failures', 
+        'absences', 
+        'goout', 
+        'freetime', 
+        'internet', 
+        'schoolsup', 
+        'paid', 
+        'Medu', 
+        'age', 
+        'famsize', 
+        'Mjob', 
+        'guardian', 
+        'health', 
+        'traveltime', 
+        'Pstatus'
+    ]
+
+    X = df[features_selected]
     Y = df['pass']
 
 
