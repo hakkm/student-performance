@@ -20,3 +20,4 @@ models/*.joblib
 # VS Code and system files
 .vscode/
 .DS_Store
+.idea
