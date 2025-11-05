@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+
+# Jupyter
+.ipynb_checkpoints
+
+# Virtual environments
+venv/
+env/
+
+# Data and models
+data/*.csv
+models/*.joblib
+
+# VS Code and system files
+.vscode/
+.DS_Store
